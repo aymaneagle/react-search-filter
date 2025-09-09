@@ -31,6 +31,11 @@ const ProductsCatalogApp = () => {
         return filtered;
     }
     const filterProducts = getFilteredProducts();
+   const removeFilter = () => {
+       setSearchText("");
+       setSelectBrand("");
+       setSelectCategory("");
+   }
 
     return (
         <div className="p-5 bg-gray-100 min-h-screen">
@@ -43,6 +48,7 @@ const ProductsCatalogApp = () => {
                           selectCategory={selectCategory}
                           setSelectCategory={setSelectCategory}
                           categories={categories}
+                          removeFilter={removeFilter}
             />
             <ProductsGrid products={filterProducts} />
         </div>
