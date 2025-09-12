@@ -4,6 +4,7 @@ import BrandFilter from "./BrandFilter.jsx";
 import CategoryFilter from "./CategoryFilter.jsx";
 import removeFilterButton from "./RemoveFiltersButton.jsx";
 import RemoveFiltersButton from "./RemoveFiltersButton.jsx";
+import PriceFilter from "./PriceFilter.jsx";
 
 const FiltersPanel = ({searchText,
                           setSearchText,
@@ -13,7 +14,10 @@ const FiltersPanel = ({searchText,
                           selectCategory,
                           setSelectCategory,
                           categories,
-                          removeFilter}) => {
+                          removeFilter,
+                          priceRange,
+                          setPriceRange
+                           }) => {
     return (
         <div>
             <SearchComponent searchText={searchText} setSearchText={setSearchText}/>
@@ -22,6 +26,7 @@ const FiltersPanel = ({searchText,
 
                 <BrandFilter selectBrand={selectBrand} setSelectBrand={setSelectBrand} brands={brands}/>
                 <CategoryFilter selectCategory={selectCategory} setSelectCategory={setSelectCategory} categories={categories}/>
+                <PriceFilter priceRange={priceRange} setPriceRange={setPriceRange}/>
                 <RemoveFiltersButton removeFilter={removeFilter}/>
             </div>
         </div>
